@@ -1,0 +1,48 @@
+/* Record button Style */
+.recordContainer{
+  height: 100%;
+  width: 10vh;
+  margin-left: 1%;
+  margin-right: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recordButton {
+  transition: 0.1s;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  border:2px outset rgba(184, 176, 176, 0.62);
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  background-image: url("../img/microphone.png");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  }
+
+.recordButton i {
+  font-size: 40px;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 700px) {
+  .recordButton {
+      display: block;
+      text-align: center;
+  }
+
+  .inputOutline {
+    width: 90%;
+  }
+}
+
+/* Animations */
+
+.recordButton:active {
+  height: 98%;
+  width: 98%;
+  border-style: inset;
+}
