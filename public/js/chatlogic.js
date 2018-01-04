@@ -1,5 +1,5 @@
 //initializing
-var ws = new WebSocket("wss://vaf-bff-web.mybluemix.net/ws/messages");
+var ws = new WebSocket("wss://testapikay.mybluemix.net/ws/messages");
 var Message,getMessageText, message_side, sendMessage;
 //debuggers
 var output = true;
@@ -14,7 +14,7 @@ if (iOS==false){
  ws.onopen = function(event){
    console.log("¡Websocket Online!");
    initialmsg = {
-     message: "hola",
+     message:"1",
      type: "message"
    };
    ws.send(JSON.stringify(initialmsg));
@@ -130,6 +130,14 @@ ws.onmessage = function(event){
 watson_res = JSON.parse(event.data);
 agent = watson_res.agent;
 message = watson_res.message;
+if (message == null) {
+  message = ""
+}
+if (message === parseInt(message, 10)){
+  message = message.toString();
+}
+
+
 if(input==true){
   console.log(watson_res);
 }
